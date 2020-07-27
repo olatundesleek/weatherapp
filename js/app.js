@@ -81,6 +81,13 @@
 //     });
 //   }
 // });
+function getResponse(response) {
+  if (!response.ok) {
+    throw Error(response.statusText);
+  } else {
+    return response;
+  }
+}
 function returnJson(data) {
   return data.json();
 }
@@ -105,7 +112,8 @@ let cityDetail = document.querySelector(".citydetail");
 let desc = document.querySelector(".desc");
 let temp = document.querySelector(".temp");
 let api = `api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=f44d5d384516bd4f3c0e9d6d8639d9a1`;
+// let api = `api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=f44d5d384516bd4f3c0e9d6d8639d9a1`;
 btn.addEventListener("click", function () {
   loader.style.display = "inline-block";
-  fetch(api).then(returnJson).then(output);
+  fetch(api).then(getResponse).then(returnJson).then(output);
 });
