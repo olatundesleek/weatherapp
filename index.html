@@ -20,8 +20,8 @@
         <div class="row text-center">
           <h1>Local Weather App</h1>
         </div>
-        <div class="row text-center">
-          <img src="" class="icon" />
+        <div class="result row text-center">
+          <img src="" class="icon-img" />
           <h3 class="citydetail"></h3>
           <div class="flex">
             <p class="temp"></p>
@@ -34,11 +34,14 @@
           class="cityname"
           placeholder="Enter your state, country"
         /><br />
-        <input type="button" value="Get Weather" class="getbtn" />
-        <div class="lds-ripple">
+        <div class="ripple-wrapper">
+        <div class="lds-ripple load">
           <div></div>
           <div></div>
         </div>
+      </div>
+        <input type="button" value="Get Weather" class="getbtn" />
+       
       </div>
     </div>
 
